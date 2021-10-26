@@ -2,27 +2,24 @@
 
 using namespace std;
 
-struct location
-{
-	int row;
-	int col;
-};
-
 class node
 {
 public:
 	node(int e, int r, int c);
 	void setElement(int e);
-	void setLocation(int r, int c);
+	void setRow(int r);
+	void setCol(int c);
 	void setRowNext(node* n);
 	void setColNext(node* n);
 	int getElement() { return element; }
-	location getLocation() { return loc; }
+	int getRow() { return row; }
+	int getCol() { return col; }
 	node* getRowNext() { return rowNext; }
 	node* getColNext() { return colNext; }
 private:
 	int element;
-	location loc;
+	int row;
+	int col;
 	node* rowNext;
 	node* colNext;
 };

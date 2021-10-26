@@ -3,6 +3,8 @@
 linkedList::linkedList()
 {
 	size = 0;
+	head = nullptr;
+	tail = nullptr;
 }
 
 node* linkedList::find(int value)
@@ -19,8 +21,8 @@ node* linkedList::find(int value)
 bool linkedList::isEmpty()
 {
 	if (size)
-		return true;
-	return false;
+		return false;
+	return true;
 }
 
 void linkedList::setHead(node* n)

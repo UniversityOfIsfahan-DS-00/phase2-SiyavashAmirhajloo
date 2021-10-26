@@ -1,9 +1,10 @@
 #include "node.h"
 
-node::node(int e,int r, int c)
+node::node(int e, int r, int c)
 {
 	setElement(e);
-	setLocation(r, c);
+	setRow(r);
+	setCol(c);
 	setRowNext(NULL);
 	setColNext(NULL);
 }
@@ -13,10 +14,14 @@ void node::setElement(int e)
 	element = e;
 }
 
-void node::setLocation(int r, int c)
+void node::setRow(int r)
 {
-	loc.row = r;
-	loc.col = c;
+	row = r;
+}
+
+void node::setCol(int c)
+{
+	col = c;
 }
 
 void node::setRowNext(node* n)

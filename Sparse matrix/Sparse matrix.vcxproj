@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{80e1b7e2-5cd0-4af7-84bc-541be8798888}</ProjectGuid>
-    <RootNamespace>Sparsematrix</RootNamespace>
+    <ProjectGuid>{7943d1cd-481d-4a4b-9be0-3e05f2d43823}</ProjectGuid>
+    <RootNamespace>SparseMatrix</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
