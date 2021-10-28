@@ -1,0 +1,22 @@
+insert:
+
+add first---->O(1)
+add last---->O(1)
+add between first and last---->O(n)
+
+delete: 
+
+delete first---->O(1)
+delete others---->O(n)
+
+search---->O(n)
+find method in linkedList class---->O(n)
+
+update---->O(n)
+
+print:
+
+format 0---->O(nm)
+format 1---->O(nm)
+
+save---->O(mn) 
