@@ -92,8 +92,11 @@ int matrix::Delete(int r, int c)
 	int deleted_data;
 	if (rows[r].getHead()->getRow() == r && rows[r].getHead()->getCol() == c) {
 		deleted_data = rows[r].getHead()->getElement();
-		rows[r].setHead(NULL);
-		rows[r].setTail(NULL);
+		if (rows[r].getSize() == 1) {
+			rows[r].setHead(NULL);
+			rows[r].setTail(NULL);
+		}
+		else rows[r].setHead(rows[r].getHead()->getRowNext());
 	}
 	else {
 		node* p = rows[r].getHead();
@@ -101,11 +104,16 @@ int matrix::Delete(int r, int c)
 			p = p->getRowNext();
 		deleted_data = p->getRowNext()->getElement();
 		p->setRowNext(p->getRowNext()->getRowNext());
+		if(p->getRowNext()==nullptr)
+			rows[r].setTail(p);
 	}
 	if (cols[c].getHead()->getCol() == c && cols[c].getHead()->getRow() == r) {
-		//deleted_data = cols[c].getHead()->getElement();
-		cols[c].setHead(NULL);
-		cols[c].setTail(NULL);
+		//deleted_data = rows[r].getHead()->getElement();
+		if (cols[c].getSize() == 1) {
+			cols[c].setHead(NULL);
+			cols[c].setTail(NULL);
+		}
+		else cols[c].setHead(cols[c].getHead()->getColNext());
 	}
 	else {
 		node* p = cols[c].getHead();
@@ -113,6 +121,8 @@ int matrix::Delete(int r, int c)
 			p = p->getColNext();
 		//deleted_data = p->getColNext()->getElement();
 		p->setColNext(p->getColNext()->getColNext());
+		if (p->getColNext() == nullptr)
+			cols[c].setTail(p);
 	}
 	rows[r].setSize(rows[r].getSize() - 1);
 	cols[c].setSize(cols[c].getSize() - 1);

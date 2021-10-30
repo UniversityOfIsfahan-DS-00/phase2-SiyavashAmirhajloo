@@ -1,13 +1,6 @@
-insert:
+insert---->O(n)
 
-add first---->O(1)
-add last---->O(1)
-add between first and last---->O(n)
-
-delete: 
-
-delete first---->O(1)
-delete others---->O(n)
+delete---->O(n)
 
 search---->O(n)
 find method in linkedList class---->O(n)

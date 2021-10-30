@@ -53,7 +53,7 @@ void doing_orders(matrix &m)
     int o = orders();
     while (o != 6) {
         system("cls");
-        int row, col, value;
+        int row, col, value, a;
         char x;
         switch (o)
         {
@@ -73,7 +73,10 @@ void doing_orders(matrix &m)
             cin >> row;
             cout << "Which col? ";
             cin >> col;
-            m.Delete(row, col);
+            a = m.Delete(row, col);
+            cout << a << " deleted.\n";
+            cout << "Enter a charactr for back.\n";
+            cin >> x;
             break;
         case 2:
             cout << "Search a value\n\n";
